@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/personaCard"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="?attr/cardbackgroundcolor"
+    app:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="196dp"
+        android:layout_height="395dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imagenLogo"
+            tools:targetApi="lollipop"
+            android:layout_width="182dp"
+            android:layout_height="251dp"
+            android:src="@drawable/cepilladocaballero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Puntuacion"
+                android:textColor="?attr/textcolor"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/Puntuacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="3.5 %"
+                android:textColor="?attr/textcolor"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/informacion"
+            android:layout_width="177dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="7500: Avión secuestrado"
+            android:textColor="?attr/textcolor"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Fecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+
+            android:text="19 jun 2020"
+            android:textColor="?attr/textcolor"
+            android:textSize="15dp" />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
