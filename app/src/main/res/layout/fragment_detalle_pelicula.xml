@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/ly_detalle_pelicula"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.DetallePelicula"
+    android:padding="20dp">
+
+
+    <ImageView
+        android:id="@+id/imagenLogodetalle"
+        android:layout_width="223dp"
+        android:layout_height="309dp"
+        android:layout_gravity="center"
+        android:src="@drawable/cepilladocaballero" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/titulodetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="7500: Avión secuestrado"
+                android:textColor="?attr/textcolor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Fechadetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+
+                android:text="19 jun 2020"
+                android:textColor="?attr/textcolor"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Puntuacion de usuarios:"
+                android:textColor="?attr/textcolor"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/Puntuaciondetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.5 %"
+                android:textColor="?attr/textcolor"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_gravity="center">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAddfavoritos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="21dp"
+                android:backgroundTint="#00BCD4"
+                android:longClickable="false"
+                android:saveEnabled="false"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                android:scrollbarAlwaysDrawVerticalTrack="false"
+                android:src="@drawable/ic_favorite_black_24dp"
+                app:backgroundTint="@color/colorPrimary"
+                app:useCompatPadding="false"
+                tools:visibility="visible" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

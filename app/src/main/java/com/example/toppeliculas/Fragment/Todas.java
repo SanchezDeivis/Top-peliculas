@@ -1,11 +1,8 @@
 package com.example.toppeliculas.Fragment;
 
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +10,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import android.app.FragmentTransaction;
 import com.example.toppeliculas.Adapters.GridAdapter;
-import com.example.toppeliculas.DetallePelicula;
-import com.example.toppeliculas.MainActivity;
 import com.example.toppeliculas.Pelicula;
 import com.example.toppeliculas.R;
 import com.example.toppeliculas.restApi.EndpointsApi;
@@ -62,20 +59,32 @@ public class Todas extends Fragment {
         gridView.setAdapter(adaptador);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @SuppressLint("WrongConstant")
             @Override
             public void onItemClick(AdapterView<?> item, View vista, int position, long id) {
 
                 Pelicula item1 = (Pelicula) item.getItemAtPosition(position);
 
-                Intent intentT = new Intent(getContext(), DetallePelicula.class);
-                intentT.putExtra("titulo", item1.getTítulo());
+                DetallePelicula detallePelicula = new DetallePelicula();
+
+                Bundle bundle = new Bundle();
+                bundle.putString("titulo", item1.getTítulo());
                 Toast.makeText(getContext(), "¡¡" + item1.getTítulo(), Toast.LENGTH_SHORT).show();
-                intentT.putExtra("calificación", item1.getCalificación());
-                intentT.putExtra("descripción", item1.getDescripción());
-                intentT.putExtra("fecha", item1.getFecha());
-                intentT.putExtra("imagen", item1.getUrl_poster());
-                //intentT.putExtra("position", position);
-                startActivity(intentT);
+                bundle.putString("calificación", item1.getCalificación());
+                bundle.putString("descripción", item1.getDescripción());
+                bundle.putString("fecha", item1.getFecha());
+                bundle.putString("imagen", item1.getUrl_poster());
+                detallePelicula.setArguments(bundle);
+
+                /*getActivity().getSupportFragmentManager().beginTransaction().replace
+                        (R.id.id_Fragment_Contenido, detallePelicula, "detallePelicula")
+                        .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
+                        .addToBackStack("detallePelicula").commit();*/
+
+                androidx.fragment.app.FragmentTransaction fragmentTransaction = getActivity()
+                        .getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.id_Fragment_Contenido, detallePelicula);
+                fragmentTransaction.commit();
             }
 
         });
